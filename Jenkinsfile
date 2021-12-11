@@ -22,8 +22,7 @@ pipeline{
         stage('Deploying application on k8s cluster') {
             steps {
                script{
-                   withCredentials([kubeconfigFile(credentialsId: 'kubernetes-config', variable: 'KUBECONFIG')]) {
-                        
+                   withCredentials([kubeconfigFile(credentialsId: 'kubernetes-config', variable: 'KUBECONFIG')]) {    
                           sh '''
                           sed -i "s,IMAGENAME,deekshithsn/adminui:${VERSION},g" adminui.ymal
                           kubectl apply -f adminui.ymal

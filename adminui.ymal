@@ -31,7 +31,7 @@
       spec:
         containers:
           - name: "admin-ui"
-            image: "deekshithsn/adminui"
+            image: "IMAGENAME"
             imagePullPolicy: "IfNotPresent"
             ports:
               - containerPort: 3000
